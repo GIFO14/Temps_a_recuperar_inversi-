@@ -32,7 +32,7 @@ public class CalcularCostCanviBombetes {
     }
 
     public static void Generar() {
-
+        
         int temps_aleatori_que_les_bombetes_estan_enceses = 0;
 
         for (int i = 0; i < bombetes_halogenes.length; i++) {
@@ -52,8 +52,7 @@ public class CalcularCostCanviBombetes {
             bombetes_LED[i] = led;
             bombetes_halogenes[i] = halogena;
 
-            System.out.println("La bombeta halogena guardada a l'array estarà encesa durant " + halogena.temps_encesa + " minuts");
-            //System.out.println("La bombeta LED guardada a l'array estarà encesa durant " + led.temps_encesa + " minuts");
+            System.out.println(halogena.temps_encesa + " minuts");
             
             nombre_de_bombetes_comptades++;
 
@@ -111,9 +110,7 @@ public class CalcularCostCanviBombetes {
         double en_mesos = temps_recuperar_inversio * 12;
         double en_dies = en_mesos * 30;
         
-        System.out.println("\nTardarem " + temps_recuperar_inversio + " anys a recuperar l'inversió");
-        System.out.println("\nTardarem " + en_mesos + " mesos a recuperar l'inversió");
-        System.out.println("\nTardarem " + en_dies + " dies a recuperar l'inversió de " + inversio + " euros.");
+        System.out.println("\nTardarem " + temps_recuperar_inversio + " anys a recuperar l'inversió de " + inversio + " euros");
 
     }
 
@@ -121,7 +118,7 @@ public class CalcularCostCanviBombetes {
 
 class Halogena {
 
-    final int vats = 28;
+    final int vats = 42;
     double temps_encesa;
     double energia_que_consumeix;
 
