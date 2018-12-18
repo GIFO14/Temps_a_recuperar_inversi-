@@ -75,6 +75,8 @@ public class CalcularCostCanviBombetes {
 
             bombetes_halogenes[i].energia_que_consumeix = bombetes_halogenes[i].temps_encesa * bombetes_halogenes[i].vats;
             bombetes_LED[i].energia_que_consumeix = bombetes_LED[i].temps_encesa * bombetes_LED[i].vats;
+            System.out.println("La bombeta halògena consumirà " + bombetes_halogenes[i].energia_que_consumeix + " vats  h/dia");
+            System.out.println("La bombeta LED consumirà " + bombetes_LED[i].energia_que_consumeix + " vats  h/dia");
 
         }
 
@@ -85,6 +87,8 @@ public class CalcularCostCanviBombetes {
             energia_total_utilitzada_LED += bombetes_LED[i].energia_que_consumeix;
 
         }
+        
+        System.out.println("Energia total utilitzada " + energia_total_utilitzada_halogenes);
 
         //Passar Wh/dia -> Wh/mes
         energia_total_utilitzada_halogenes *= 30;
@@ -107,9 +111,6 @@ public class CalcularCostCanviBombetes {
         
         temps_recuperar_inversio = inversio / estalvi_energia_per_any;
         
-        double en_mesos = temps_recuperar_inversio * 12;
-        double en_dies = en_mesos * 30;
-        
         System.out.println("\nTardarem " + temps_recuperar_inversio + " anys a recuperar l'inversió de " + inversio + " euros");
 
     }
@@ -126,7 +127,7 @@ class Halogena {
 
 class LED {
 
-    int vats = 8;
+    final int vats = 8;
     double temps_encesa;
     double energia_que_consumeix;
 
